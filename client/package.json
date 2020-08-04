@@ -1,0 +1,22 @@
+{
+  "name": "progressive-blog",
+  "version": "1.0.0",
+  "description": "ProgressiveBlog",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "prorok26",
+  "license": "MIT",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 80,
+    "trailingComma": "es5",
+    "jsxBracketSameLine": true,
+    "arrowParens": "always"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
