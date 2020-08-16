@@ -4,6 +4,7 @@
   "description": "ProgressiveBlog",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon -e ts -w ./src --exec ts-node src/index.ts"
   },
   "author": "prorok26",
   "license": "MIT",
@@ -16,7 +17,10 @@
     "arrowParens": "always"
   },
   "dependencies": {
+    "typescript": "^3.9.7"
   },
   "devDependencies": {
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2"
   }
 }
