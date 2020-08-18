@@ -1,26 +1,10 @@
 {
-  "name": "progressive-blog",
+  "name": "client",
   "version": "1.0.0",
-  "description": "ProgressiveBlog",
   "main": "index.js",
-  "scripts": {
-    "dev": "nodemon -e ts -w ./src --exec ts-node src/index.ts"
-  },
-  "author": "prorok26",
+  "author": "PrOrOk26",
   "license": "MIT",
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "printWidth": 80,
-    "trailingComma": "es5",
-    "jsxBracketSameLine": true,
-    "arrowParens": "always"
-  },
   "dependencies": {
-    "typescript": "^3.9.7"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4",
-    "ts-node": "^8.10.2"
+    "next": "^9.5.2"
   }
 }
