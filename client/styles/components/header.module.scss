@@ -1,0 +1,5 @@
+@use '../modules/variables';
+
+.container {
+  color: variables.$red;
+}
