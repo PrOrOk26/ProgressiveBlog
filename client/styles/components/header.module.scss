@@ -1,5 +1,37 @@
-@use '../modules/variables';
+@use '../modules/variables' as v;
 
-.container {
-  color: variables.$red;
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  font-size: v.$xx-large;
+  line-height: v.$xxx-large;
+
+  & .top {
+    display: flex;
+    justify-content: space-between;
+    padding: v.$large v.$x-large v.$large;
+    font-family: "Montserrat ExtraBold";
+  }
+
+  & .quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: v.$xx-large v.$x-large v.$xx-large;
+    font-family: "Montserrat Medium Italic";
+  }
+
+  & .nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: v.$x-large;
+    margin: auto 100px;
+    padding: v.$x-large v.$xxx-large 0;
+    border-top: 2px solid v.$black;
+
+    & .link {
+      cursor: pointer;
+    }
+  }
 }
