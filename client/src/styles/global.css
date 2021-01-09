@@ -5,14 +5,14 @@
 @layer base {
   @font-face {
     font-family: "Montserrat Medium";
-    src: url("../../../public/fonts/Montserrat-Medium.ttf") format("truetype");
+    src: url("../../public/fonts/Montserrat-Medium.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Montserrat Medium Italic";
-    src: url("../../../public/fonts/Montserrat-MediumItalic.ttf")
+    src: url("../../public/fonts/Montserrat-MediumItalic.ttf")
       format("truetype");
     font-weight: normal;
     font-style: normal;
@@ -20,8 +20,7 @@
 
   @font-face {
     font-family: "Montserrat ExtraBold";
-    src: url("../../../public/fonts/Montserrat-ExtraBold.ttf")
-      format("truetype");
+    src: url("../../public/fonts/Montserrat-ExtraBold.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
   }

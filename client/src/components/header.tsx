@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "../../node_modules/gatsby/index"
 
 export default function Header() {
   return (
@@ -12,7 +11,7 @@ export default function Header() {
         <span>Don’t judge a Cloud by its cover — BvK</span>
       </div>
       <nav className="flex justify-between m-auto mt-5 mb-5 border-2 border-solid border-black">
-        <Link href="/">
+        {/* <Link href="/">
           <span className="cursor-pointer">Motivation</span>
         </Link>
         <Link href="/">
@@ -26,7 +25,7 @@ export default function Header() {
         </Link>
         <Link href="/">
           <span className="cursor-pointer">Contact Me</span>
-        </Link>
+        </Link> */}
       </nav>
     </header>
   )
