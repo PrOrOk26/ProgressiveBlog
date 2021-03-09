@@ -55,9 +55,6 @@ module.exports = {
         montserratMediumItalic: ["Montserrat Medium Italic"],
         montserratExtraBold: ["Montserrat ExtraBold"],
       },
-      minHeight: {
-        "screen-90": "90vh",
-      },
     },
   },
 }

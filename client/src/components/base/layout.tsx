@@ -1,4 +1,4 @@
-import { WithChildren } from "../util/with-children"
+import { WithChildren } from "../../util/with-children"
 import Header from "./header"
 import React from "react"
 import Footer from "./footer"
@@ -13,7 +13,7 @@ export default function Layout({
   title = "Progressive blog",
 }: LayoutProps) {
   return (
-    <div className="bg-gray-400">
+    <div>
       <Helmet>
         <title>{title}</title>
         <meta charSet="utf-8" />

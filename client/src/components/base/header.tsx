@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 export default function Header() {
   return (
@@ -11,21 +12,21 @@ export default function Header() {
         <span>Don’t judge a Cloud by its cover — BvK</span>
       </div>
       <nav className="flex justify-between m-auto mt-5 mb-5 border-2 border-solid border-black">
-        {/* <Link href="/">
+        <Link to="/">
           <span className="cursor-pointer">Motivation</span>
         </Link>
-        <Link href="/">
+        <Link to="/">
           <span className="cursor-pointer">Author</span>
         </Link>
-        <Link href="/">
+        <Link to="/">
           <span className="cursor-pointer">Software Engineering</span>
         </Link>
-        <Link href="/">
+        <Link to="/">
           <span className="cursor-pointer">Thoughts</span>
         </Link>
-        <Link href="/">
+        <Link to="/">
           <span className="cursor-pointer">Contact Me</span>
-        </Link> */}
+        </Link>
       </nav>
     </header>
   )
