@@ -9,6 +9,8 @@ require("dotenv").config({
   path: `.env`,
 })
 
+console.log(process.env.API_URL)
+
 module.exports = {
   /* Your site config here */
   plugins: [
