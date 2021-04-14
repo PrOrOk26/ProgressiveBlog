@@ -1,0 +1,5 @@
+export { default as HomeIcon } from "./home"
+export { default as AuthorIcon } from "./author"
+export { default as AboutBlogIcon } from "./about-blog"
+export { default as ContactIcon } from "./contact"
+export { default as BlogIcon } from "./blog"

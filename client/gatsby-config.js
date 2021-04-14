@@ -27,14 +27,43 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: process.env.API_URL || "http://localhost:1337",
-        contentTypes: ["article"],
+        apiURL: "http://localhost:1337",
+        contentTypes: ["article", "topic"],
         singleTypes: [`global`],
         queryLimit: 1000,
         loginData: {
           identifier: "prorok26",
           password: "PiKaSsO1937",
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/.cache/gatsby-source-filesystem`,
+      },
+    },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-highlights`,
+            options: {
+              // Additional languages, no need to add it
+              // if you don't wish to use additional languages
+              additionalLangs: [`language-rust`],
+              // scope prefix to use, defaults to ''
+              scopePrefix: "syntax--",
+              codeWrap: {
+                className: "midnight",
+              },
+            },
+          },
+        ],
       },
     },
   ],

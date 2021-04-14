@@ -13,7 +13,7 @@ export default function Layout({
   title = "Progressive blog",
 }: LayoutProps) {
   return (
-    <div>
+    <div className="h-full flex flex-col justify-between">
       <Helmet>
         <title>{title}</title>
         <meta charSet="utf-8" />

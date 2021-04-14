@@ -1,18 +1,25 @@
-import React from "react"
-import ArticlesPreview from "../components/articles-preview"
-import Layout from "../components/base/layout"
-import { Article, ArticleResponse, articlesMocks } from "../data/articles"
-import { graphql, useStaticQuery } from "gatsby"
-import { mapArticleResponseToArticle } from "../../mappers"
+import { graphql } from "gatsby"
+import React, { ReactElement } from "react"
+import Layout from "../../components/base/layout"
+import { ArticleResponse } from "../../data/articles"
+import { mapArticleResponseToArticle } from "../../../mappers"
+import ArticlesPreview from "../../components/articles-preview"
 
 export const query = graphql`
-  query RecentArticles {
-    allStrapiArticle(limit: 5, sort: { fields: created_at, order: DESC }) {
+  query ArticlesByTopic($slug: Int!) {
+    allStrapiArticle(
+      sort: { fields: created_at, order: DESC }
+      filter: { topic: { id: { eq: $slug } } }
+    ) {
       edges {
         node {
           id
           title
           subtitle
+          topic {
+            id
+            name
+          }
           section {
             title
             content
@@ -50,7 +57,7 @@ export type ArticlesResponse = {
   }
 }
 
-function HomePage({ data }: Props) {
+export default function TopicPage({ data }: Props): ReactElement {
   return (
     <Layout>
       <ArticlesPreview
@@ -64,5 +71,3 @@ function HomePage({ data }: Props) {
     </Layout>
   )
 }
-
-export default HomePage
