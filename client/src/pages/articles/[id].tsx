@@ -3,7 +3,7 @@ import React, { ReactElement } from "react"
 import Article from "../../components/article"
 import Layout from "../../components/base/layout"
 import { ArticleResponse } from "../../data/articles"
-import { mapArticleResponseToArticle } from "../../../mappers"
+import { mapArticleResponseToArticle } from "../../mappers"
 
 interface Props {
   data: {
@@ -29,8 +29,17 @@ export const query = graphql`
         lastname
       }
       avatar {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [JPG, PNG])
+        alt
+        caption
+        media {
+          childImageSharp {
+            gatsbyImageData(
+              width: 720
+              height: 480
+              placeholder: BLURRED
+              formats: [AUTO]
+            )
+          }
         }
       }
       created_at

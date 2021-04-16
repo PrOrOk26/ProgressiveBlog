@@ -1,15 +1,9 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-
 require("ts-node").register({ files: true })
 require("dotenv").config({
   path: `.env`,
 })
 
-console.log(process.env.API_URL)
+const LOCAL_SERVER_URL = "http://localhost:1337"
 
 module.exports = {
   /* Your site config here */
@@ -27,13 +21,13 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: "http://localhost:1337",
+        apiURL: process.env.API_URL || LOCAL_SERVER_URL,
         contentTypes: ["article", "topic"],
-        singleTypes: [`global`],
+        singleTypes: [`global`, "about-author", "about-blog"],
         queryLimit: 1000,
         loginData: {
-          identifier: "prorok26",
-          password: "PiKaSsO1937",
+          identifier: process.env.CRM_LOGIN,
+          password: process.env.CRM_PASSWORD,
         },
       },
     },

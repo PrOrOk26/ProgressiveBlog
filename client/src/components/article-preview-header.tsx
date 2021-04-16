@@ -23,10 +23,10 @@ export default function ArticlePreviewHeader({ data }: Props): ReactElement {
               </span>
             </p>
           </a>
-          <span className="mr-1 ml-1">·</span>
+          {/* <span className="mr-1 ml-1">·</span> */}
         </>
       )}
-      <a rel="noopener" href="/">
+      {/* <a rel="noopener" href="/">
         <p className="flex items-center">
           <span
             className="leading-5 text-xs"
@@ -35,7 +35,7 @@ export default function ArticlePreviewHeader({ data }: Props): ReactElement {
             Pinned
           </span>
         </p>
-      </a>
+      </a> */}
     </div>
   )
 }

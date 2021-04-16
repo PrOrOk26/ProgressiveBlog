@@ -13,8 +13,6 @@ interface Props {
 export default function Article({ data }: Props): ReactElement {
   const { article } = data
 
-  debugger
-
   return (
     <div className="flex flex-col p-4" style={{ maxWidth: 680 }}>
       <ArticleHeader data={{ author: article.author }} />
@@ -38,7 +36,7 @@ export default function Article({ data }: Props): ReactElement {
       >
         {article.subtitle}
       </h2>
-      <ArticleAvatar image={article.avatar} />
+      {article.avatar && <ArticleAvatar image={article.avatar} />}
       <div className="pt-1 pb-1">
         <ReactMarkdown
           className="markdown-block"

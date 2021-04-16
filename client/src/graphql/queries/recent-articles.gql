@@ -1,0 +1,32 @@
+query RecentArticles {
+  allStrapiArticle(limit: 5, sort: { fields: created_at, order: DESC }) {
+    edges {
+      node {
+        id
+        title
+        subtitle
+        section {
+          title
+          content
+          id
+        }
+        author {
+          id
+          firstname
+          lastname
+        }
+        avatar {
+          alt
+          caption
+          media {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO])
+            }
+          }
+        }
+        created_at
+        updated_at
+      }
+    }
+  }
+}

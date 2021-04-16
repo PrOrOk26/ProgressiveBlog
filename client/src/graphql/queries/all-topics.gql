@@ -1,0 +1,9 @@
+query Topics {
+  allStrapiTopic {
+    edges {
+      node {
+        strapiId
+      }
+    }
+  }
+}

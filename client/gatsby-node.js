@@ -1,42 +1,35 @@
 require("ts-node").register({ files: true })
 const path = require("path")
+const { loadDocuments } = require("@graphql-tools/load")
+const { GraphQLFileLoader } = require("@graphql-tools/graphql-file-loader")
+
+const graphqQueryPaths = [
+  "./src/graphql/queries/all-articles.gql",
+  "./src/graphql/queries/all-topics.gql",
+]
+
+const pagesLocations = {
+  article: `src/pages/articles/[id].tsx`,
+  topic: `src/pages/topics/[id].tsx`,
+}
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const strapiArticles = await graphql(`
-    query Articles {
-      allStrapiArticle {
-        edges {
-          node {
-            id
-            title
-            subtitle
-            section {
-              title
-              content
-              id
-            }
-            author {
-              id
-              firstname
-              lastname
-            }
-            avatar {
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, formats: [AUTO])
-              }
-            }
-            created_at
-            updated_at
-          }
-        }
-      }
+
+  const [allArticlesQueryObject, allTopicsQueryObject] = await loadDocuments(
+    graphqQueryPaths,
+    {
+      loaders: [new GraphQLFileLoader()],
     }
-  `)
+  )
 
-  const articlePage = path.resolve(`src/pages/articles/[id].tsx`)
+  const articles = await graphql(allArticlesQueryObject.rawSDL)
+  const topics = await graphql(allTopicsQueryObject.rawSDL)
 
-  strapiArticles.data.allStrapiArticle.edges.forEach(edge => {
+  const articlePage = path.resolve(pagesLocations.article)
+  const topicPage = path.resolve(pagesLocations.topic)
+
+  articles.data.allStrapiArticle.edges.forEach(edge => {
     createPage({
       path: `/articles/${edge.node.id}`,
       component: articlePage,
@@ -46,29 +39,12 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const strapiTopics = await graphql(`
-    query Topics {
-      allStrapiTopic {
-        edges {
-          node {
-            id
-          }
-        }
-      }
-    }
-  `)
-
-  console.log(strapiTopics.data.allStrapiTopic.edges)
-
-  const topicPage = path.resolve(`src/pages/topics/[id].tsx`)
-
-  strapiTopics.data.allStrapiTopic.edges.forEach(edge => {
-    console.log(`edge.node.id: \n`, edge.node.id)
+  topics.data.allStrapiTopic.edges.forEach(edge => {
     createPage({
-      path: `/topics/${edge.node.id}`,
+      path: `/topics/${edge.node.strapiId}`,
       component: topicPage,
       context: {
-        slug: parseInt(edge.node.id),
+        slug: parseInt(edge.node.strapiId),
       },
     })
   })

@@ -1,9 +1,9 @@
 import React from "react"
 import ArticlesPreview from "../components/articles-preview"
 import Layout from "../components/base/layout"
-import { Article, ArticleResponse, articlesMocks } from "../data/articles"
-import { graphql, useStaticQuery } from "gatsby"
-import { mapArticleResponseToArticle } from "../../mappers"
+import { ArticleResponse } from "../data/articles"
+import { graphql } from "gatsby"
+import { mapArticleResponseToArticle } from "../mappers"
 
 export const query = graphql`
   query RecentArticles {
@@ -24,8 +24,17 @@ export const query = graphql`
             lastname
           }
           avatar {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, formats: [AUTO])
+            alt
+            caption
+            media {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 720
+                  height: 480
+                  placeholder: BLURRED
+                  formats: [AUTO]
+                )
+              }
             }
           }
           created_at

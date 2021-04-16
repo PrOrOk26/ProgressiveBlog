@@ -1,12 +1,26 @@
+import { IGatsbyImageData } from "gatsby-plugin-image"
+import {
+  FileNode,
+  IGatsbyImageDataParent,
+} from "gatsby-plugin-image/dist/src/components/hooks"
+
 export type Article = {
   id: number
   title: string
   subtitle: string
   section: Section[]
   author: Author
-  avatar?: any
+  avatar?: Image
   created_at: Date
   updated_at: Date
+}
+
+export type ImageDataLike = FileNode | IGatsbyImageDataParent | IGatsbyImageData
+
+export type Image = {
+  alt?: string
+  caption?: string
+  media: ImageDataLike
 }
 
 export type ArticleResponse = Omit<Article, "created_at" | "updated_at"> & {
@@ -29,7 +43,11 @@ export type Section = {
 export type Topic = {
   id: number
   name: string
-  avatar?: any
+  avatar?: ImageDataLike
+}
+
+export type TopicResponse = Omit<Topic, "id"> & {
+  strapiId: number
 }
 
 export const articlesMocks: Article[] = [

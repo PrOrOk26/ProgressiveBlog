@@ -38,9 +38,9 @@ export default function ArticlePreview({ data }: Props): ReactElement {
       >
         {article.subtitle}
       </h2>
-      <ArticleAvatar image={article.avatar} />
+      {article.avatar && <ArticleAvatar image={article.avatar} />}
       <p className="pt-1 pb-1">
-        {`${article?.section[0].content.slice(0, 1000)}...` ?? ""}
+        {`${article?.section[0].content.slice(0, 500)}...` ?? ""}
       </p>
       <Link to={`/articles/${article.id}`}>
         <span
@@ -50,10 +50,6 @@ export default function ArticlePreview({ data }: Props): ReactElement {
           Read more
         </span>
       </Link>
-      {/* <div className="flex justify-between p-2">
-        <span>{5}</span>
-        <span>{10}</span>
-      </div> */}
     </div>
   )
 }

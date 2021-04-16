@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_article_article_medias",
+  "info": {
+    "name": "articleMedia",
+    "icon": "image"
+  },
+  "options": {},
+  "attributes": {
+    "alt": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string"
+    },
+    "media": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

@@ -18,10 +18,8 @@ export default function ArticlesPreview({ data }: Props): ReactElement {
         <h1
           style={{
             color: "rgba(41, 41, 41, 1)",
-            fontSize: "36px",
-            lineHeight: "44px",
           }}
-          className="font-bold break-words self-start p-4"
+          className="text-xl font-semibold break-words self-start pl-4"
         >
           Recent articles
         </h1>
@@ -29,17 +27,15 @@ export default function ArticlesPreview({ data }: Props): ReactElement {
           <ArticlePreview key={article.title} data={{ article }} />
         ))}
       </div>
-      <Link to="/" className="cursor-pointer">
-        <h2
+      <Link to="/topics" className="cursor-pointer">
+        <h4
           style={{
             color: "rgba(41, 41, 41, 1)",
-            fontSize: "36px",
-            lineHeight: "44px",
           }}
-          className="font-bold break-words self-start p-4"
+          className="text-xl font-semibold break-words self-start pl-4"
         >
           More articles
-        </h2>
+        </h4>
       </Link>
     </div>
   )

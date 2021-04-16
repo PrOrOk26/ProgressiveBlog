@@ -1,12 +1,12 @@
 import { graphql } from "gatsby"
 import React, { ReactElement } from "react"
-import Article from "../../components/article"
 import ArticleTopicCard from "../../components/article-topic-card"
 import Layout from "../../components/base/layout"
-import { Topic } from "../../data/articles"
+import { TopicResponse } from "../../data/articles"
+import { mapTopicResponseToTopic } from "../../mappers/map-topic-response-to-topic"
 
 type TopicEdge = {
-  node: Topic
+  node: TopicResponse
 }
 
 type Props = {
@@ -24,6 +24,7 @@ export const query = graphql`
     allStrapiTopic {
       edges {
         node {
+          strapiId
           name
           avatar {
             childImageSharp {
@@ -31,7 +32,7 @@ export const query = graphql`
                 width: 320
                 height: 320
                 placeholder: BLURRED
-                formats: [JPG, PNG]
+                formats: [AUTO]
               )
             }
           }
@@ -47,6 +48,7 @@ export default function TopicsPage({ data }: Props): ReactElement {
       <div className="flex justify-around flex-wrap">
         {data?.allStrapiTopic?.edges
           ?.map(e => e.node)
+          .map(mapTopicResponseToTopic)
           .map(node => <ArticleTopicCard data={{ topic: node }} />) ?? []}
       </div>
     </Layout>

@@ -4,22 +4,21 @@ import {
   IGatsbyImageDataParent,
 } from "gatsby-plugin-image/dist/src/components/hooks"
 import React, { ReactElement } from "react"
-
-type ImageDataLike = FileNode | IGatsbyImageDataParent | IGatsbyImageData
+import { Image } from "../../data/articles"
 
 interface Props {
-  image: ImageDataLike
+  image: Image
   className?: string
 }
 
 export default function Avatar({ image, className }: Props): ReactElement {
-  const processedImage = getImage(image as FileNode) as IGatsbyImageData
+  const processedImage = getImage(image.media as FileNode) as IGatsbyImageData
 
   return (
     <div className={className}>
       <GatsbyImage
         image={processedImage}
-        alt="A dinosaur"
+        alt={image.alt ?? ""}
         imgStyle={{
           maxWidth: "100%",
           maxHeight: "100%",

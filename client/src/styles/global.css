@@ -146,4 +146,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
   #gatsby-focus-wrapper {
     height: 100%;
   }
+
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .burger-menu__item-list {
+    height: auto !important;
+  }
 }

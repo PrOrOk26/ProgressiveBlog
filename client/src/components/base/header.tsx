@@ -29,10 +29,6 @@ export default function Header() {
           <AboutBlogIcon className="mr-2" />
           <span className="cursor-pointer">What is this blog</span>
         </Link>
-        <Link to="/contact" style={{ display: "flex" }}>
-          <ContactIcon className="mr-2" />
-          <span className="cursor-pointer">Get in touch</span>
-        </Link>
       </BurgerMenu>
       <div
         style={{ height: 150, backgroundColor: "white" }}
@@ -46,6 +42,22 @@ export default function Header() {
             Perrenial
           </span>
           <span className="text-sm">Quest</span>
+        </div>
+        <div
+          className="flex flex-col justify-center mr-4 ml-4"
+          style={{ color: "#787878" }}
+        >
+          <span className="font-extrabold text-lg leading-lg tracking-wide">
+            ||
+          </span>
+        </div>
+        <div
+          className="flex flex-col justify-center"
+          style={{ color: "#787878" }}
+        >
+          <span className="text-lg leading-lg tracking-wide">
+            Thoughts on life, art, engineering and more
+          </span>
         </div>
       </div>
       {/* <div className="flex justify-between font-montserratExtraBold">

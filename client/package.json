@@ -11,9 +11,13 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "generate:graphql": "graphql-codegen --config graphql-codegen.yml",
+    "gg": "yarn generate:graphql"
   },
   "dependencies": {
+    "@graphql-tools/graphql-file-loader": "^6.2.7",
+    "@graphql-tools/load": "^6.2.8",
     "@types/react-burger-menu": "^2.8.0",
     "@types/react-helmet": "6.1.0",
     "autoprefixer": "10.2.4",
@@ -31,6 +35,7 @@
     "gatsby-source-strapi": "^0.0.12",
     "gatsby-transformer-remark": "^3.2.0",
     "gatsby-transformer-sharp": "^3.0.0",
+    "graphql-tag": "^2.11.0",
     "postcss": "8.2.7",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
@@ -41,6 +46,10 @@
     "tailwindcss": "2.0.3"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.21.3",
+    "@graphql-codegen/introspection": "1.18.1",
+    "@graphql-codegen/typescript": "1.21.1",
+    "@graphql-codegen/typescript-operations": "1.17.15",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",

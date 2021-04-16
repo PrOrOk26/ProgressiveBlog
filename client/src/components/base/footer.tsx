@@ -4,40 +4,29 @@ export default function Footer() {
   return (
     <footer className="flex flex-col justify-start">
       <div
-        style={{ height: 75, backgroundColor: "#355876" }}
-        className="flex overflow-hidden pl-6 pr-6"
+        style={{ height: 150, backgroundColor: "white" }}
+        className="flex flex-col justify-center overflow-hidden pl-6 pr-6"
       >
-        <div className="flex flex-col justify-center">
-          <span className="font-extrabold text-white text-lg leading-lg tracking-wide">
-            towards
+        <div
+          className="flex justify-center items-center mb-2"
+          style={{ color: "#787878" }}
+        >
+          <span className="font-medium text-lg leading-lg tracking-wide">
+            I'm looking forward to life as a journey full of unknown
           </span>
-          <span className="text-white text-sm">data science</span>
+          <span className="font-bold text-lg leading-lg tracking-wide">
+            - let's explore it together
+          </span>
+        </div>
+        <div className="flex justify-center items-center">
+          <a
+            href="mailto:vraniuk@gmail.com"
+            className="font-medium text-lg leading-lg tracking-wide"
+          >
+            Contact me
+          </a>
         </div>
       </div>
-      {/* <div className="flex justify-between font-montserratExtraBold">
-        <span>Progressive</span>
-        <span className="font-montserratMediumItalic">Just a blog</span>
-      </div>
-      <div className="flex justify-center items-center font-montserratMediumItalic">
-        <span>Don’t judge a Cloud by its cover — BvK</span>
-      </div> */}
-      {/* <nav className="flex justify-between m-auto mt-5 mb-5 border-2 border-solid border-black">
-        <Link to="/">
-          <span className="cursor-pointer">Motivation</span>
-        </Link>
-        <Link to="/">
-          <span className="cursor-pointer">Author</span>
-        </Link>
-        <Link to="/">
-          <span className="cursor-pointer">Software Engineering</span>
-        </Link>
-        <Link to="/">
-          <span className="cursor-pointer">Thoughts</span>
-        </Link>
-        <Link to="/">
-          <span className="cursor-pointer">Contact Me</span>
-        </Link>
-      </nav> */}
     </footer>
   )
 }

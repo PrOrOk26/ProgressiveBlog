@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_authors",
+  "info": {
+    "name": "AboutAuthor",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "personalInfo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "miscelaneous.social-networks"
+    },
+    "author": {
+      "plugin": "admin",
+      "model": "user"
+    }
+  }
+}

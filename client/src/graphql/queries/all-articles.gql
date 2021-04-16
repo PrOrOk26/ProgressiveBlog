@@ -1,0 +1,32 @@
+query Articles {
+  allStrapiArticle {
+    edges {
+      node {
+        id
+        title
+        subtitle
+        section {
+          title
+          content
+          id
+        }
+        author {
+          id
+          firstname
+          lastname
+        }
+        avatar {
+          alt
+          caption
+          media {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO])
+            }
+          }
+        }
+        created_at
+        updated_at
+      }
+    }
+  }
+}

@@ -29,19 +29,13 @@
       "plugin": "admin",
       "model": "user"
     },
-    "avatar": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
     "topic": {
       "model": "topic"
+    },
+    "avatar": {
+      "type": "component",
+      "repeatable": false,
+      "component": "article.article-media"
     }
   }
 }

@@ -6,5 +6,12 @@ interface Props {
 }
 
 export default function BurgerMenu({ children }: Props): ReactElement {
-  return <Menu>{children}</Menu>
+  return (
+    <Menu
+      menuClassName="burger-menu"
+      itemListClassName="burger-menu__item-list"
+    >
+      {children}
+    </Menu>
+  )
 }
