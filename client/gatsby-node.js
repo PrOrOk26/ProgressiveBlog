@@ -9,8 +9,8 @@ const graphqQueryPaths = [
 ]
 
 const pagesLocations = {
-  article: `src/pages/articles/[id].tsx`,
-  topic: `src/pages/topics/[id].tsx`,
+  article: `src/templates/articles/[id].tsx`,
+  topic: `src/templates/topics/[id].tsx`,
 }
 
 exports.createPages = async ({ graphql, actions }) => {
