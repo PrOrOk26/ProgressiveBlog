@@ -2,158 +2,156 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @font-face {
-    font-family: "Montserrat Medium";
-    src: url("./fonts/Montserrat-Medium.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: "Montserrat Medium";
+  src: url("./fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  @font-face {
-    font-family: "Montserrat Medium Italic";
-    src: url("./fonts/Montserrat-MediumItalic.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: "Montserrat Medium Italic";
+  src: url("./fonts/Montserrat-MediumItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  @font-face {
-    font-family: "Montserrat ExtraBold";
-    src: url("./fonts/Montserrat-ExtraBold.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: "Montserrat ExtraBold";
+  src: url("./fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  @font-face {
-    font-family: "Lato Regular";
-    src: url("./fonts/Lato-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: "Lato Regular";
+  src: url("./fonts/Lato-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  html {
-    font-family: "Montserrat Medium";
-  }
+html {
+  font-family: "Montserrat Medium";
+}
 
-  body {
-    min-height: 100vh;
-  }
+body {
+  min-height: 100vh;
+}
 
-  blockquote {
-    margin-top: 41px;
-    margin-bottom: 34px;
-    font-size: 16px;
-    font-weight: 400;
-    border-left: 5px solid rgb(238, 238, 238);
-    font-style: italic;
-    padding: 10px 20px;
-    font-family: "Lato Regular";
-  }
+blockquote {
+  margin-top: 41px;
+  margin-bottom: 34px;
+  font-size: 16px;
+  font-weight: 400;
+  border-left: 5px solid rgb(238, 238, 238);
+  font-style: italic;
+  padding: 10px 20px;
+  font-family: "Lato Regular";
+}
 
-  .markdown-block pre {
-    overflow-x: auto;
-    border: 1px solid #ccc;
-    font-family: monospace, monospace;
-    font-size: 1em;
-  }
+.markdown-block pre {
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
 
-  .markdown-block pre code {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    color: #000;
-    background: #f8f8f8;
-  }
+.markdown-block pre code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #000;
+  background: #f8f8f8;
+}
 
-  ol,
-  ul {
-    list-style: initial;
-    margin: initial;
-    padding: revert;
-  }
+ol,
+ul {
+  list-style: initial;
+  margin: initial;
+  padding: revert;
+}
 
-  /* Position and sizing of burger button */
-  .bm-burger-button {
-    position: fixed;
-    width: 36px;
-    height: 30px;
-    left: 36px;
-    top: 36px;
-  }
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
 
-  /* Color/shape of burger icon bars */
-  .bm-burger-bars {
-    background: #373a47;
-  }
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
 
-  /* Color/shape of burger icon bars on hover*/
-  .bm-burger-bars-hover {
-    background: #a90000;
-  }
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
 
-  /* Position and sizing of clickable cross button */
-  .bm-cross-button {
-    height: 24px;
-    width: 24px;
-  }
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
 
-  /* Color/shape of close button cross */
-  .bm-cross {
-    background: #bdc3c7;
-  }
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
 
-  /*
+/*
 Sidebar wrapper styles
 Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
 */
-  .bm-menu-wrap {
-    position: fixed;
-    height: 100%;
-  }
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
 
-  /* General sidebar styles */
-  .bm-menu {
-    background: #373a47;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
-  }
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
 
-  /* Morph shape necessary with bubble or elastic */
-  .bm-morph-shape {
-    fill: #373a47;
-  }
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
 
-  /* Wrapper for item list */
-  .bm-item-list {
-    color: #b8b7ad;
-    padding: 0.8em;
-  }
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
 
-  /* Individual item */
-  .bm-item {
-    display: inline-block;
-  }
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
 
-  /* Styling of overlay */
-  .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
-  }
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
 
-  #___gatsby {
-    height: 100vh;
-  }
+#___gatsby {
+  height: 100vh;
+}
 
-  #gatsby-focus-wrapper {
-    height: 100%;
-  }
+#gatsby-focus-wrapper {
+  height: 100%;
+}
 
-  .burger-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .burger-menu__item-list {
-    height: auto !important;
-  }
+.burger-menu__item-list {
+  height: auto !important;
 }
