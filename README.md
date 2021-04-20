@@ -1,24 +1,24 @@
 # Progressive Blog
 
-This is a source code for my Progressive Blog 
+This is a source code for my blog 
 
 Technologies:
 
 # Frontend 
 
 - React.js
-- Next.js
+- Gatsby.js
 
 # Backend
 
-- Express.js
 - PostgreSQL
+- Strapi
 
 # Infrastructure 
 
 - Docker 
-- Kubernetes
-- AWS Cloud 
+- Netlify
+- Digital Ocean 
 
 
 
