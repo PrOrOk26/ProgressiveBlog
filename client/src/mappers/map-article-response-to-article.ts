@@ -1,4 +1,4 @@
-import { Article, ArticleResponse } from "../data/articles"
+import { Article, ArticleResponse } from "../types"
 
 export function mapArticleResponseToArticle(
   response: ArticleResponse

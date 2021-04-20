@@ -1,28 +1,10 @@
 import { graphql } from "gatsby"
 import React, { ReactElement } from "react"
-import ReactMarkdown from "react-markdown"
+import { MarkdownRenderer } from "../components/base"
 import Layout from "../components/base/layout"
+import { AboutAuthorQueryResponse } from "../types"
 
-type AboutAuthor = {
-  id: string
-  strapiId: number
-  personalInfo: {
-    email: string
-    linkedin: string
-    twitter: string
-  }
-  content: string
-}
-
-type AboutAuthorEdge = {
-  node: AboutAuthor
-}
-
-type AboutAuthorQueryResponse = {
-  edges: AboutAuthorEdge[]
-}
-
-interface Props {
+type Props = {
   data: {
     allStrapiAboutAuthor: AboutAuthorQueryResponse
   }
@@ -50,6 +32,10 @@ export const query = graphql`
 export default function Author({ data }: Props): ReactElement {
   const { allStrapiAboutAuthor } = data
 
+  let authorContent = allStrapiAboutAuthor.edges[0].node.content
+
+  authorContent = authorContent.replace(/\n/gi, "  \n&nbsp;")
+
   return (
     <Layout>
       <div className="p-4 flex flex-col justify-start items-center">
@@ -63,13 +49,8 @@ export default function Author({ data }: Props): ReactElement {
         >
           About the author
         </h1>
-        <ReactMarkdown
-          className="markdown-block"
-          transformImageUri={uri => `http://localhost:1337${uri}`}
-        >
-          {allStrapiAboutAuthor.edges[0].node.content}
-        </ReactMarkdown>
-        <div className="flex flex-col justify-start items-start">
+        <MarkdownRenderer>{authorContent}</MarkdownRenderer>
+        <div className="flex flex-col justify-start items-center">
           <h2
             style={{
               color: "rgba(41, 41, 41, 1)",

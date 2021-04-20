@@ -2,21 +2,11 @@ import { graphql } from "gatsby"
 import React, { ReactElement } from "react"
 import ArticleTopicCard from "../../components/article-topic-card"
 import Layout from "../../components/base/layout"
-import { TopicResponse } from "../../data/articles"
 import { mapTopicResponseToTopic } from "../../mappers/map-topic-response-to-topic"
-
-type TopicEdge = {
-  node: TopicResponse
-}
+import { TopicsResponse } from "../../types"
 
 type Props = {
   data: TopicsResponse
-}
-
-export type TopicsResponse = {
-  allStrapiTopic: {
-    edges: TopicEdge[]
-  }
 }
 
 export const query = graphql`

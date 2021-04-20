@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react"
-import { Article as ArticleType } from "../data/articles"
 import ArticleAvatar from "./article-avatar"
 import ArticleHeader from "./article-header"
-import ReactMarkdown from "react-markdown"
+import { Article as ArticleType } from "../types"
+import { MarkdownRenderer } from "./base"
 
 interface Props {
   data: {
@@ -15,7 +15,7 @@ export default function Article({ data }: Props): ReactElement {
 
   return (
     <div className="flex flex-col p-4" style={{ maxWidth: 680 }}>
-      <ArticleHeader data={{ author: article.author }} />
+      <ArticleHeader data={{ article }} />
       <h1
         style={{
           color: "rgba(41, 41, 41, 1)",
@@ -38,17 +38,8 @@ export default function Article({ data }: Props): ReactElement {
       </h2>
       {article.avatar && <ArticleAvatar image={article.avatar} />}
       <div className="pt-1 pb-1">
-        <ReactMarkdown
-          className="markdown-block"
-          transformImageUri={uri => `http://localhost:1337${uri}`}
-        >
-          {article?.section[0].content ?? ""}
-        </ReactMarkdown>
+        <MarkdownRenderer>{article?.section[0].content ?? ""}</MarkdownRenderer>
       </div>
-      {/* <div className="flex justify-between p-2">
-        <span>{5}</span>
-        <span>{10}</span>
-      </div> */}
     </div>
   )
 }

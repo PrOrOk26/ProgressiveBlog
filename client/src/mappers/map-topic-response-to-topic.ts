@@ -1,4 +1,4 @@
-import { Topic, TopicResponse } from "../data/articles"
+import { Topic, TopicResponse } from "../types"
 
 export function mapTopicResponseToTopic(response: TopicResponse): Topic {
   return {

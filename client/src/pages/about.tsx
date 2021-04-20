@@ -1,21 +1,11 @@
 import { graphql } from "gatsby"
 import React, { ReactElement } from "react"
 import ReactMarkdown from "react-markdown"
+import { MarkdownRenderer } from "../components/base"
 import Layout from "../components/base/layout"
+import { AboutBlogQueryResponse } from "../types"
 
-type AboutBlog = {
-  content: string
-}
-
-type AboutBlogEdge = {
-  node: AboutBlog
-}
-
-type AboutBlogQueryResponse = {
-  edges: AboutBlogEdge[]
-}
-
-interface Props {
+type Props = {
   data: {
     allStrapiAboutBlog: AboutBlogQueryResponse
   }
@@ -36,6 +26,8 @@ export const query = graphql`
 export default function About({ data }: Props): ReactElement {
   const { allStrapiAboutBlog } = data
 
+  let aboutBlogContent = allStrapiAboutBlog.edges[0].node.content
+
   return (
     <Layout>
       <div className="p-4 flex flex-col justify-start items-center">
@@ -49,12 +41,7 @@ export default function About({ data }: Props): ReactElement {
         >
           What is this blog?
         </h1>
-        <ReactMarkdown
-          className="markdown-block"
-          transformImageUri={uri => `http://localhost:1337${uri}`}
-        >
-          {allStrapiAboutBlog.edges[0].node.content}
-        </ReactMarkdown>
+        <MarkdownRenderer>{aboutBlogContent}</MarkdownRenderer>
       </div>
     </Layout>
   )

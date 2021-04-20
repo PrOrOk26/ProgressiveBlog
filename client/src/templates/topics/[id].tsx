@@ -1,9 +1,10 @@
 import { graphql, Link } from "gatsby"
 import React, { ReactElement } from "react"
 import Layout from "../../components/base/layout"
-import { ArticleResponse } from "../../data/articles"
 import { mapArticleResponseToArticle } from "../../mappers"
 import ArticlesPreview from "../../components/articles-preview"
+import { ArticlesResponse } from "../../types"
+import { BlogRoutes } from "../../routes"
 
 export const query = graphql`
   query ArticlesByTopic($slug: Int!) {
@@ -52,37 +53,32 @@ export const query = graphql`
   }
 `
 
-type ArticlesEdge = {
-  node: ArticleResponse
-}
-
 type Props = {
   data: ArticlesResponse
 }
 
-export type ArticlesResponse = {
-  allStrapiArticle: {
-    edges: ArticlesEdge[]
-  }
-}
-
 export default function TopicPage({ data }: Props): ReactElement {
+  const articles =
+    data.allStrapiArticle.edges
+      ?.map(e => e.node)
+      .map(mapArticleResponseToArticle) ?? []
+
+  const pageTopic = articles.length ? articles[0].topic : null
+
   return (
     <Layout>
       {data?.allStrapiArticle?.edges?.length ? (
         <ArticlesPreview
           data={{
-            articles:
-              data.allStrapiArticle.edges
-                ?.map(e => e.node)
-                .map(mapArticleResponseToArticle) ?? [],
+            articles,
           }}
+          title={pageTopic?.name}
         />
       ) : (
         <div className="flex flex-col justify-between items-center">
           <span>No articles for this topic yet</span>
-          <Link to="/topics" style={{ display: "flex" }}>
-            <span className="cursor-pointer">Go back to topics</span>
+          <Link to={BlogRoutes.TOPICS} style={{ display: "flex" }}>
+            <span className="cursor-pointer font-bold">Go back to topics</span>
           </Link>
         </div>
       )}

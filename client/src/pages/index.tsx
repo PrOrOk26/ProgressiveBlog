@@ -1,9 +1,9 @@
 import React from "react"
 import ArticlesPreview from "../components/articles-preview"
 import Layout from "../components/base/layout"
-import { ArticleResponse } from "../data/articles"
 import { graphql } from "gatsby"
 import { mapArticleResponseToArticle } from "../mappers"
+import { ArticlesResponse } from "../types"
 
 export const query = graphql`
   query RecentArticles {
@@ -45,18 +45,8 @@ export const query = graphql`
   }
 `
 
-type ArticlesEdge = {
-  node: ArticleResponse
-}
-
 type Props = {
   data: ArticlesResponse
-}
-
-export type ArticlesResponse = {
-  allStrapiArticle: {
-    edges: ArticlesEdge[]
-  }
 }
 
 function HomePage({ data }: Props) {
@@ -69,6 +59,7 @@ function HomePage({ data }: Props) {
               ?.map(e => e.node)
               .map(mapArticleResponseToArticle) ?? [],
         }}
+        title="Recent articles"
       />
     </Layout>
   )

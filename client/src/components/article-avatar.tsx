@@ -1,10 +1,7 @@
 import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image"
-import {
-  FileNode,
-  IGatsbyImageDataParent,
-} from "gatsby-plugin-image/dist/src/components/hooks"
+import { FileNode } from "gatsby-plugin-image/dist/src/components/hooks"
 import React, { ReactElement } from "react"
-import { Image } from "../data/articles"
+import { Image } from "../types"
 
 interface Props {
   image: Image
@@ -18,7 +15,7 @@ export default function ArticleAvatar({ image }: Props): ReactElement {
       <GatsbyImage
         image={processedImage}
         alt={""}
-        imgStyle={{ maxWidth: "100%", maxHeight: "100%" }}
+        imgStyle={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "4px" }}
       />
       {image.caption && (
         <p className="flex items-center p-2 self-center">

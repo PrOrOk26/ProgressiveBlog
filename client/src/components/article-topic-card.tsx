@@ -1,6 +1,7 @@
 import { navigate } from "gatsby"
 import React, { ReactElement } from "react"
-import { Topic } from "../data/articles"
+import { createTopicRoute } from "../routes"
+import { Topic } from "../types"
 import Avatar from "./base/avatar"
 
 interface Props {
@@ -15,7 +16,7 @@ export default function ArticleTopicCard({ data }: Props): ReactElement {
   return (
     <div
       className="flex flex-col p-4 xs:p-2 cursor-pointer"
-      onClick={() => navigate(`/topics/${topic.id}`)}
+      onClick={() => navigate(createTopicRoute(topic))}
     >
       {topic.avatar && <Avatar image={{ media: topic.avatar }} />}
       <span>{topic.name}</span>

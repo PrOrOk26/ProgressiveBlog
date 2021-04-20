@@ -2,8 +2,8 @@ import { graphql } from "gatsby"
 import React, { ReactElement } from "react"
 import Article from "../../components/article"
 import Layout from "../../components/base/layout"
-import { ArticleResponse } from "../../data/articles"
 import { mapArticleResponseToArticle } from "../../mappers"
+import { ArticleResponse } from "../../types"
 
 interface Props {
   data: {

@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import React, { ReactElement } from "react"
-import { Article } from "../data/articles"
+import { createArticleRoute } from "../routes"
+import { Article } from "../types"
 import ArticleAvatar from "./article-avatar"
 import ArticlePreviewHeader from "./article-preview-header"
 
@@ -13,11 +14,12 @@ interface Props {
 export default function ArticlePreview({ data }: Props): ReactElement {
   const { article } = data
 
-  debugger
-
   return (
-    <div className="flex flex-col p-4" style={{ maxWidth: 680 }}>
-      <ArticlePreviewHeader data={{ author: article.author }} />
+    <div
+      className="flex flex-col pt-8 pb-10 border-b border-solid border-gray-300"
+      style={{ maxWidth: 680 }}
+    >
+      <ArticlePreviewHeader data={{ article }} />
       <h1
         style={{
           color: "rgba(41, 41, 41, 1)",
@@ -42,7 +44,7 @@ export default function ArticlePreview({ data }: Props): ReactElement {
       <p className="pt-1 pb-1">
         {`${article?.section[0].content.slice(0, 500)}...` ?? ""}
       </p>
-      <Link to={`/articles/${article.id}`}>
+      <Link to={createArticleRoute(article)}>
         <span
           className="leading-5 text-xs"
           style={{ color: "rgba(102, 138, 170, 1)" }}
