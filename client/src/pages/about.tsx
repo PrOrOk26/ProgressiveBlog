@@ -1,6 +1,5 @@
 import { graphql } from "gatsby"
 import React, { ReactElement } from "react"
-import ReactMarkdown from "react-markdown"
 import { MarkdownRenderer } from "../components/base"
 import Layout from "../components/base/layout"
 import { AboutBlogQueryResponse } from "../types"
