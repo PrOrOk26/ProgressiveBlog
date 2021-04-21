@@ -16,14 +16,16 @@ export default function ArticlesPreview({ data, title }: Props): ReactElement {
 
   return (
     <div className="flex flex-col items-center pr-3 pl-3 pb-3">
-      <div className="flex flex-col items-center pt-2 pb-6">
+      <div className="flex flex-col items-center pt-4 pb-6">
         <h1
           style={{
             color: "rgba(41, 41, 41, 1)",
+            fontSize: "36px",
+            lineHeight: "44px",
           }}
           className="text-lg font-medium break-words self-start"
         >
-          {title}
+          {title?.toUpperCase()}
         </h1>
         {articles.map(article => (
           <ArticlePreview key={article.title} data={{ article }} />

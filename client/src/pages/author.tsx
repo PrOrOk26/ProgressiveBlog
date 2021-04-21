@@ -63,11 +63,13 @@ export default function Author({ data }: Props): ReactElement {
           </h2>
           <a
             href={`https://twitter.com/${allStrapiAboutAuthor.edges[0].node.personalInfo.twitter}`}
+            style={{ color: "rgb(5, 132, 190)" }}
           >
             Twitter
           </a>
           <a
             href={`https://www.linkedin.com/in/${allStrapiAboutAuthor.edges[0].node.personalInfo.linkedin}`}
+            style={{ color: "rgb(5, 132, 190)" }}
           >
             LinkedIn
           </a>

@@ -10,7 +10,7 @@ export default function Logo(): ReactElement {
       style={{ color: "#787878" }}
     >
       <span className="font-extrabold text-lg leading-lg tracking-wide">
-        Perrenial
+        Perennial
       </span>
       <span className="text-sm">Quest</span>
     </Link>

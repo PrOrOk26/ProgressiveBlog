@@ -2,7 +2,7 @@ import React, { ReactElement } from "react"
 import ArticleAvatar from "./article-avatar"
 import ArticleHeader from "./article-header"
 import { Article as ArticleType } from "../types"
-import { MarkdownRenderer } from "./base"
+import ArticleSection from "./article-section"
 
 interface Props {
   data: {
@@ -37,8 +37,10 @@ export default function Article({ data }: Props): ReactElement {
         {article.subtitle}
       </h2>
       {article.avatar && <ArticleAvatar image={article.avatar} />}
-      <div className="pt-1 pb-1">
-        <MarkdownRenderer>{article?.section[0].content ?? ""}</MarkdownRenderer>
+      <div className="pt-10 pb-2">
+        {article.section.map(section => (
+          <ArticleSection key={section.id} data={{ section }} />
+        ))}
       </div>
     </div>
   )

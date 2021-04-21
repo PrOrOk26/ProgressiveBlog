@@ -10,7 +10,7 @@ type LayoutProps = WithChildren<{
 
 export default function Layout({
   children,
-  title = "Progressive blog",
+  title = "Perennial Quest",
 }: LayoutProps) {
   return (
     <div className="h-full flex flex-col justify-between">
