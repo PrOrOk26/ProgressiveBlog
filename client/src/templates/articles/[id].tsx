@@ -17,7 +17,6 @@ export const query = graphql`
       id
       title
       subtitle
-      text
       section {
         title
         content
