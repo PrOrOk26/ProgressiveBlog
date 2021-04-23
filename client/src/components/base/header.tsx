@@ -32,7 +32,7 @@ export default function Header() {
       >
         <Logo />
         <div
-          className="flex flex-col justify-center mr-4 ml-4"
+          className="hidden md:flex flex-col justify-center mr-4 ml-4"
           style={{ color: "#787878" }}
         >
           <span className="font-extrabold text-lg leading-lg tracking-wide">
@@ -40,7 +40,7 @@ export default function Header() {
           </span>
         </div>
         <div
-          className="flex flex-col justify-center"
+          className="hidden md:flex flex-col justify-center"
           style={{ color: "#787878" }}
         >
           <span className="text-lg leading-lg tracking-wide">

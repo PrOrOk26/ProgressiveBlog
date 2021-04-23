@@ -5,7 +5,7 @@ import { BlogRoutes } from "../../routes"
 export default function Logo(): ReactElement {
   return (
     <Link
-      className="flex flex-col justify-center"
+      className="flex flex-col justify-center text-center"
       to={BlogRoutes.HOME}
       style={{ color: "#787878" }}
     >

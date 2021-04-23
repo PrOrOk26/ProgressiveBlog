@@ -90,6 +90,7 @@ export type AboutAuthor = {
     email: string
     linkedin: string
     twitter: string
+    github: string
   }
   content: string
 }

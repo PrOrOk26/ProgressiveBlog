@@ -21,6 +21,7 @@ export const query = graphql`
             email
             linkedin
             twitter
+            github
           }
           content
         }
@@ -64,14 +65,23 @@ export default function Author({ data }: Props): ReactElement {
           <a
             href={`https://twitter.com/${allStrapiAboutAuthor.edges[0].node.personalInfo.twitter}`}
             style={{ color: "rgb(5, 132, 190)" }}
+            target="_blank"
           >
             Twitter
           </a>
           <a
             href={`https://www.linkedin.com/in/${allStrapiAboutAuthor.edges[0].node.personalInfo.linkedin}`}
             style={{ color: "rgb(5, 132, 190)" }}
+            target="_blank"
           >
             LinkedIn
+          </a>
+          <a
+            href={`https://github.com/${allStrapiAboutAuthor.edges[0].node.personalInfo.github}`}
+            style={{ color: "rgb(5, 132, 190)" }}
+            target="_blank"
+          >
+            GitHub
           </a>
         </div>
       </div>

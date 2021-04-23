@@ -66,6 +66,7 @@ blockquote {
 
 .markdown-block a {
   color: rgb(5, 132, 190);
+  word-break: break-word;
 }
 
 p,

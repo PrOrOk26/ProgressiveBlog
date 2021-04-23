@@ -10,7 +10,7 @@ export default function Footer() {
       style={{ backgroundColor: "rgba(0, 0, 0, 0.9)", color: "white" }}
     >
       <div className="flex flex-col">
-        <p className="mb-2 text-center">
+        <p className="mb-2 text-center text-white">
           <span className="font-medium text-lg leading-lg tracking-wide">
             I'm looking forward to a journey of life
           </span>
